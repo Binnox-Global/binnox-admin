@@ -10,10 +10,19 @@ import {
   InventoryIconSvg,
   ManagementIconSvg,
   MarketingIconSvg,
+  NotificationIconSvg,
   OrderRecordsIconSvg,
+  TopNavProfileArrowDownIconSvg,
 } from "../icons";
 import Image from "next/image";
 import { useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 const SidebarComponent = () => {
   const pathname = usePathname(); // Get the current pathname
@@ -159,20 +168,30 @@ const SidebarComponent = () => {
 
 const HeaderComponent = () => {
   return (
-    <header className="bg-[#000000] shadow h-[90px] flex items-center justify-between px-5">
-      <h1 className="text-xl font-semibold">Admin Dashboard</h1>
+    <header className="bg-[#000000] text-white shadow h-[90px] flex items-center justify-between px-5">
+      <div className="right-container ms-auto me-[10px] flex items-center gap-[23px]">
+        <div className="icon">
+          <NotificationButton />
+        </div>
+        <div className="flex flex-col gap-[5px] text-end">
+          <div className="text-[12px] leading-[14px] font-[700] ">
+            Mark Collins
+          </div>
+          <div className="text-[9px] leading-[10px] font-[400] ">Admin 1</div>
+        </div>
+        <div className="flex items-center gap-[5px]">
+          <Avatar>
+            <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+            <AvatarFallback>CN</AvatarFallback>
+          </Avatar>
+          <TopNavProfileArrowDownIconSvg />
+        </div>
+      </div>
     </header>
   );
 };
 
 export { SidebarComponent, HeaderComponent };
-
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 
 function NavMenuDropdown({
   isFull = true,
@@ -220,5 +239,16 @@ function NavMenuDropdown({
         </AccordionContent>
       </AccordionItem>
     </Accordion>
+  );
+}
+
+function NotificationButton() {
+  return (
+    <button className="flex items-center gap-2 relative p-2">
+      <NotificationIconSvg />
+      <div className="absolute -top-[2px] right-[1px] cursor-pointer size-[19px] bg-[#F46702] rounded-full flex items-center justify-center">
+        <span className="text-white text-[10px]">2</span>
+      </div>
+    </button>
   );
 }
