@@ -10,6 +10,9 @@ import {
   InventoryIconSvg,
   ManagementIconSvg,
   MarketingIconSvg,
+  NavProfileIconSvg,
+  NavSettingsIconSvg,
+  NavSupportIconSvg,
   NotificationIconSvg,
   OrderRecordsIconSvg,
   TopNavProfileArrowDownIconSvg,
@@ -24,10 +27,14 @@ import {
 } from "@/components/ui/accordion";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-const SidebarComponent = () => {
+const SidebarComponent = ({
+  isFull,
+  setIsFull,
+}: {
+  isFull: boolean;
+  setIsFull: (value: boolean) => void;
+}) => {
   const pathname = usePathname(); // Get the current pathname
-
-  const [isFull, setIsFull] = useState(true);
 
   // Function to check if the link is active
   const isActive = (path: string) => pathname === path;
@@ -91,11 +98,11 @@ const SidebarComponent = () => {
 
   return (
     <div
-      className={`${
-        isFull ? "min-w-[250px] max-w-[298px]" : " min-w-[100px] max-w-[186px]"
-      }  bg-[#000000] text-white h-screen p-5`}
+      className={`w-full bg-[#000000] text-white  ${
+        !isFull ? " p-2 py-5 " : "p-5"
+      } `}
     >
-      <div className="flex gap-[20px] justify-between items-center mt-[40px]">
+      <div className="flex gap-[10px] justify-between items-center mt-[20px] ">
         <Image
           src={isFull ? "/images/full-logo.svg" : "/images/half-logo.svg"}
           width={isFull ? 146 : 51}
@@ -105,13 +112,13 @@ const SidebarComponent = () => {
         <div
           className=""
           onClick={() => {
-            setIsFull((prev) => !prev);
+            setIsFull(!isFull);
           }}
         >
           <HamBurgerIconSvg />{" "}
         </div>
       </div>
-      <nav className="mt-6">
+      <nav className="mt-[10px] min-h-full">
         {navLinks.map((navLink, index) => (
           <div key={index}>
             {navLink.links ? (
@@ -138,29 +145,39 @@ const SidebarComponent = () => {
           </div>
         ))}
 
-        {/* <NavMenuDropdown
+        <hr className="my-20 bg-white/40" />
+
+        <NavMenuDropdown
           isFull={isFull}
-          title="Management"
-          links={[
-            { name: "Users", link: "/dashboard/users" },
-            {
-              name: "Businesses",
-              link: "/dashboard/businesses",
-            },
-            {
-              name: "Riders",
-              link: "/dashboard/businesses",
-            },
-            {
-              name: "Ambassadors",
-              link: "/dashboard/businesses",
-            },
-            {
-              name: "Price Update",
-              link: "/dashboard/businesses",
-            },
-          ]}
-        /> */}
+          icon={<NavSupportIconSvg />}
+          title={"Support"}
+          links={[]}
+        />
+
+        <Link
+          href={"/dashboard/settings"}
+          className={`flex gap-1 items-center p-2 h-[47px] rounded-[5px] hover:bg-[#141414] mb-2  ${
+            !isFull && "justify-center"
+          } ${isActive("/dashboard/settings") ? "bg-[#141414]" : ""}`}
+        >
+          <div className="icon-container w-10 bor der flex justify-center items-center">
+            {/* {navLink.icon} */}
+            <NavProfileIconSvg />
+          </div>{" "}
+          {isFull && "Profile"}
+        </Link>
+        <Link
+          href={"/dashboard/settings"}
+          className={`flex gap-1 items-center p-2 h-[47px] rounded-[5px] hover:bg-[#141414] mb-2  ${
+            !isFull && "justify-center"
+          } ${isActive("/dashboard/settings") ? "bg-[#141414]" : ""}`}
+        >
+          <div className="icon-container w-10 bor der flex justify-center items-center">
+            {/* {navLink.icon} */}
+            <NavSettingsIconSvg />
+          </div>{" "}
+          {isFull && "Audit Log"}
+        </Link>
       </nav>
     </div>
   );
