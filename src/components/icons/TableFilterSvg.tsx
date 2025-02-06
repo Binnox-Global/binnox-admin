@@ -1,0 +1,38 @@
+import { IconProps } from "./types";
+
+export const TableFilterSvg = ({ size = 17, className, ...props }: IconProps) => {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 17 17"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      {...props}
+    >
+      <path
+        d="M10.211 13.2727C10.211 13.6794 9.94429 14.2127 9.60429 14.4194L8.66431 15.0261C7.79097 15.5661 6.57764 14.9594 6.57764 13.8794V10.3127C6.57764 9.8394 6.31097 9.23273 6.03764 8.8994L3.47762 6.20606C3.13762 5.86606 2.87097 5.26607 2.87097 4.8594V3.31273C2.87097 2.50606 3.47765 1.8994 4.21765 1.8994H13.111C13.851 1.8994 14.4576 2.50606 14.4576 3.24606V4.72606C14.4576 5.26606 14.1176 5.9394 13.7843 6.27273"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M11.3776 11.5727C12.5558 11.5727 13.5109 10.6176 13.5109 9.43939C13.5109 8.26118 12.5558 7.30605 11.3776 7.30605C10.1994 7.30605 9.24426 8.26118 9.24426 9.43939C9.24426 10.6176 10.1994 11.5727 11.3776 11.5727Z"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13.9109 11.9727L13.2443 11.306"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+};
