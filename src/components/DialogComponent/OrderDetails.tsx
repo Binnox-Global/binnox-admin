@@ -105,7 +105,7 @@ function OrderDetails() {
 
       {/* main card */}
 
-      <div className="p-[30px] pt-[40px] flex flex-col gap-[30px] border border-red-500 ">
+      <div className="p-[30px] pt-[40px] flex flex-col gap-[30px]">
         {/* header */}
         <div className="h-[90px] pb-5 border-b border-black/10 justify-start items-start gap-12 inline-flex">
           <div className="flex-col justify-center items-start gap-2 inline-flex">
