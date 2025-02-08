@@ -9,12 +9,22 @@ import { CustomerAcquisitionChart } from "@/components/charts/CustomerAcquisitio
 import { ProfileGrowthChart } from "@/components/charts/ProfileGrowthChart";
 import { WeeklyRevenueChart } from "@/components/charts/WeeklyRevenueChart";
 import { RecentOrders } from "@/components/tables/RecentOrders";
+import { DialogComponent } from "@/components/DialogComponent";
+import WithdrawalDetails from "@/components/DialogComponent/WithdrawalDetails";
+import UpdateWallet from "@/components/DialogComponent/UpdateWallet";
+import UpdatePrice from "@/components/DialogComponent/UpdatePrice";
+import NewProduct from "@/components/DialogComponent/NewProduct";
+import UploadCombo from "@/components/DialogComponent/UploadCombo";
+import AddDiscount from "@/components/DialogComponent/AddDiscount";
+import ProductDiscount from "@/components/DialogComponent/ProductDiscount";
+import NewPromo from "@/components/DialogComponent/NewPromo";
+import OrderDetails from "@/components/DialogComponent/OrderDetails";
 
 export default function Playground() {
   return (
     <div className="p-8 space-y-8">
       <h1 className="text-2xl font-semibold mb-6">Component Playground</h1>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         <StatsCard
           title="Total Revenue"
@@ -23,7 +33,7 @@ export default function Playground() {
           timeFrame="₦45,000 today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Total Orders"
           value="902"
@@ -31,7 +41,7 @@ export default function Playground() {
           timeFrame="today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Customers"
           value="1278"
@@ -39,7 +49,7 @@ export default function Playground() {
           timeFrame="today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Businesses Online"
           value="28"
@@ -66,7 +76,7 @@ export default function Playground() {
             4: 50,
             3: 50,
             2: 50,
-            1: 50
+            1: 50,
           }}
         />
       </div>
@@ -91,6 +101,42 @@ export default function Playground() {
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
         <RecentOrders />
+      </div>
+
+      <div className="flex">
+        <DialogComponent
+          title="Dialog Title"
+          trigger={<button>Open Dialog</button>}
+        >
+          <p>Dialog content goes here.</p>
+        </DialogComponent>
+      </div>
+      <div className="flex">
+        <WithdrawalDetails />
+      </div>
+      <div className="flex">
+        <UpdateWallet />
+      </div>
+      <div className="flex">
+        <UpdatePrice />
+      </div>
+      <div className="flex">
+        <NewProduct />
+      </div>
+      <div className="flex">
+        <UploadCombo />
+      </div>
+      <div className="flex">
+        <AddDiscount />
+      </div>
+      <div className="flex">
+        <ProductDiscount />
+      </div>
+      <div className="flex">
+        <NewPromo />
+      </div>
+      <div className="flex">
+        <OrderDetails />
       </div>
     </div>
   );
