@@ -4,7 +4,7 @@ import { Dialog2CloseSvg, DialogCloseSvg } from "../icons/DialogCloseSvg";
 import { NewProductImageFileSvg } from "../icons/NewProductImageFileSvg";
 import { AddIconSvg } from "../icons/AddIconSvg";
 
-function AddDiscount() {
+function NewProduct() {
   const [requirePack, setRequirePack] = useState(false);
   const [requireExtra, setRequireExtra] = useState(false);
 
@@ -12,7 +12,7 @@ function AddDiscount() {
     <div className="w-[639px] max-h-[1049px] inline-flex gap-[21px] flex-col relative bg-white rounded-lg p-[30px]">
       <div className="w-full h-9 flex">
         <div className="grow shrink basis-0 text-neutral-950 text-[28px] font-medium font-['Raleway'] leading-9">
-          Add Discount
+          New Product
         </div>
         <div className="close-button cursor-pointer">
           <Dialog2CloseSvg />
@@ -20,6 +20,20 @@ function AddDiscount() {
       </div>
       {/*  */}
       <div className="form-container flex flex-col gap-[24px]">
+        {/*  */}
+        <label className="h-[68px] px-[30px] rounded-lg border-2 border-[#b1cdf3]  justify-between items-center inline-flex cursor-pointer">
+          <div className="flex items-center gap-[26px]">
+            <NewProductImageFileSvg />{" "}
+            <div className="text-black/40 text-sm font-normal font-['Raleway'] leading-[21px]">
+              Upload or drop a file right here
+            </div>
+          </div>
+          <div className="text-[#333333] text-sm font-normal font-['Raleway'] leading-[21px]">
+            JPEG, PNG, GIF, SVG....
+          </div>
+          <input type="file" className="hidden" />
+        </label>
+        {/*  */}
         <div className="flex flex-col gap-[20px] justify-between">
           <label className="flex flex-col gap-[8px]">
             <span
@@ -37,7 +51,7 @@ function AddDiscount() {
             <span
               className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
             >
-              Description
+              Description/ Ingredients
             </span>
             <input
               type="text"
@@ -52,23 +66,19 @@ function AddDiscount() {
             <span
               className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
             >
-              Discount Type
+              Price
             </span>
-            <select
-              name=""
-              id=""
+            <input
+              type="text"
               className="w-[276px] h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
-            >
-              <option value="">Select discount</option>
-              <option value="">Rate</option>
-              <option value="">Percent</option>
-            </select>
+              placeholder="N450,900"
+            />
           </label>
           <label className="flex flex-col gap-[8px]">
             <span
               className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
             >
-              Percentage
+              Category
             </span>
             <input
               type="text"
@@ -78,7 +88,7 @@ function AddDiscount() {
           </label>
         </div>
         <div className="">
-          <label className="flex gap-[8px] h-[17px] items-center">
+          <label className="flex gap-[8px] h-[47px] items-center">
             <input
               type="checkbox"
               className="mr-[10px]"
@@ -87,48 +97,90 @@ function AddDiscount() {
             <span
               className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
             >
-              Discount by date
+              Require Pack
             </span>
           </label>
+          {requirePack && (
+            <div className="flex mt-[24px] gap-[20px] justify-between">
+              <label className="flex flex-col gap-[8px]">
+                <span
+                  className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
+                >
+                  Select pack
+                </span>
+                <input
+                  type="text"
+                  className="w-[276px] h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
+                  placeholder="N450,900"
+                />
+              </label>
+              <label className="flex flex-col gap-[8px]">
+                <span
+                  className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
+                >
+                  Price per pack
+                </span>
+                <input
+                  type="text"
+                  className="w-[276px] h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
+                  placeholder="N400"
+                />
+              </label>
+            </div>
+          )}
         </div>
 
         <div className="">
-          <label className="flex gap-[8px] h-[17px] items-center">
+          <label className="flex gap-[8px] h-[47px] items-center">
             <input
               type="checkbox"
               className="mr-[10px]"
-              // onClick={() => setRequireExtra(!requireExtra)}
+              onClick={() => setRequireExtra(!requireExtra)}
             />
             <span
               className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
             >
-              Discount by number of use
+              Extras
             </span>
           </label>
+          {requireExtra && (
+            <div className="flex gap-[20px] mt-[24px] justify-between">
+              <label className="flex flex-col gap-[8px]">
+                <span
+                  className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
+                >
+                  Select protein
+                </span>
+                <input
+                  type="text"
+                  className="w-[276px] h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
+                  placeholder="N450,900"
+                />
+              </label>
+              <label className="flex flex-col gap-[8px]">
+                <span
+                  className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
+                >
+                  Select Protein
+                </span>
+                <input
+                  type="text"
+                  className="w-[276px] h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
+                  placeholder="N400"
+                />
+              </label>
+            </div>
+          )}
         </div>
 
-        <label className="flex flex-col gap-[8px]">
-          <span
-            className={`text-neutral-950 text-sm font-normal font-['Raleway'] leading-[21px]`}
-          >
-            Customer use once
-          </span>
-          <select
-            name=""
-            id=""
-            className="w-full h-[44px] px-[21px] gap-[10px] rounded-[8px] border-[2px] border-[#b1cdf3] focus:outline-none text-black text-sm font-normal font-['Raleway'] leading-[21px] "
-          >
-            <option value="">Select discount</option>
-            <option value="">True</option>
-            <option value="">False</option>
-          </select>
-        </label>
+        <button className="flex gap-[8px] border-b-[2px] h-[47px] items-center text-[#F45309]">
+          <AddIconSvg />
+          Add extra
+        </button>
 
-        <div className="h-11 p-2 bg-[#fdddce] rounded-lg border flex-col justify-center items-start inline-flex">
-          <div className="text-[#f6753a] px-2  text-sm font-normal font-['Raleway'] leading-[21px]">
-            A user can only use this discount once
-          </div>
-        </div>
+        <button className="flex gap-[8px] h-[47px] items-center">
+          <AddIconSvg /> Add promo
+        </button>
       </div>
       {/*  */}
       <div className="mt-auto mb-[30px] justify-start items-start gap-[30px] inline-flex">
@@ -143,4 +195,4 @@ function AddDiscount() {
   );
 }
 
-export default AddDiscount;
+export default NewProduct;
