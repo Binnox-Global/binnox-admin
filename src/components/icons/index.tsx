@@ -10,7 +10,7 @@ export function HamBurgerIconSvg() {
       <path
         d="M4.375 21.25H26.875M4.375 15H26.875M4.375 8.75H26.875"
         stroke="white"
-        stroke-width="2.5"
+        strokeWidth="2.5"
         stroke-linecap="round"
         stroke-linejoin="round"
       />
