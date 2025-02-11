@@ -12,7 +12,7 @@ interface DashboardLayoutProps {
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   const [isFull, setIsFull] = useState(true);
   return (
-    <div className="relative flex h-fu ll">
+    <div className="relative flex min-h-full">
       {/* Sidebar */}
       <div
         className={`fixed top-0 h-screen overflow-hidden overflow-y-scroll bg-[#000000] z-10 ${
@@ -20,17 +20,19 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
         }`}
       >
         <SidebarComponent isFull={isFull} setIsFull={setIsFull} />
+        {/* Header */}
+        <HeaderComponent />
       </div>
 
       <div
         className={` ${
           isFull ? "ms-[240px]" : " ms-[120px] "
-        } flex flex-col flex-1 `}
+        } flex flex-col flex-1 min-h-[100vh] relative `}
       >
-        {/* Header */}
-        <HeaderComponent />
         {/* Page Content */}
-        <main className="p-6 bg-gray-100 h-full">{children}</main>
+        <main className=" p-6 bg-gray-100 relative mt-[90px]  min-h-[100%]">
+          {children}
+        </main>
       </div>
     </div>
   );
