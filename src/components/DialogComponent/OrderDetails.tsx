@@ -2,7 +2,7 @@ import React from "react";
 
 function OrderDetails() {
   return (
-    <div className="w-[897px] h-[1199px] flex bg-[#f2f2f2] bg-[#7e 7e7e3e] rounded-[30px] shadow-[0px_4px_15px_0px_rgba(0,0,0,0.14)] shadow-[0px_-4px_155px_0px_rgba(0,0,0,0.15)] shadow-[0px_4px_4px_0px_rgba(250,250,250,1.00)] shadow-[0px_-4px_4px_0px_rgba(244,244,244,1.00)]">
+    <div className="w-[897px] h-[1199px] flex bg-[#f2f2f2] bg-[#7e 7e7e3e] border border-red-500 overflow-hidden rounded-[30px] shadow-[0px_4px_15px_0px_rgba(0,0,0,0.14)] shadow-[0px_-4px_155px_0px_rgba(0,0,0,0.15)] shadow-[0px_4px_4px_0px_rgba(250,250,250,1.00)] shadow-[0px_-4px_4px_0px_rgba(244,244,244,1.00)]">
       <div className="w-[315px] h-[1199px] bg-[#e9e9e9] rounded-tl-[30px] rounded-bl-[30px] px-[30px] py-[30px] flex flex-col gap-[30px]">
         {/* user profile */}
         <ProfileDetails
@@ -145,12 +145,15 @@ function OrderDetails() {
 
           {/* card */}
           <div className="h-[271.65px] p-5 bg-white rounded-[20px] flex-col justify-start items-start gap-[9.24px] inline-flex">
+            {/*  */}
             <div className="w-[486.64px] h-[71.06px] relative">
-              <div className="w-[402.87px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm border" />
+              {/* line */}
+              <div className="w-[445px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm border" />
               <div className="w-[486.64px] h-[71.06px] pb-[13.86px] left-0 top-0 absolute border-b justify-start items-start gap-[41.27px] inline-flex">
-                <div className="relative">
+                <div className="w-[90.71px] relative">
+                  {/* dot */}
                   <div className="w-[13.55px] h-[13.55px] left-[38.79px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-bold font-['Raleway'] leading-[17.25px]">
+                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Time Ordered
                   </div>
                   <div className="w-[66.31px] left-[12.51px] top-[42.20px] absolute text-center text-[#667085] text-[11.09px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -186,12 +189,15 @@ function OrderDetails() {
                 </div>
               </div>
             </div>
+            {/*  */}
             <div className="w-[486.64px] h-[71.06px] relative">
-              <div className="w-[402.87px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm border" />
+              {/* line */}
+              <div className="w-[445px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm border" />
               <div className="w-[486.64px] h-[71.06px] pb-[13.86px] left-0 top-0 absolute border-b justify-start items-start gap-[41.27px] inline-flex">
-                <div className="relative">
+                <div className="w-[90.71px] relative">
+                  {/* dot */}
                   <div className="w-[13.55px] h-[13.55px] left-[38.79px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-bold font-['Raleway'] leading-[17.25px]">
+                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Time Ordered
                   </div>
                   <div className="w-[66.31px] left-[12.51px] top-[42.20px] absolute text-center text-[#667085] text-[11.09px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -200,7 +206,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[3.46px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[3.46px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Time Packaged
                   </div>
                   <div className="w-[90.71px] left-0 top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -209,7 +215,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[19.17px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[19.17px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Accepted
                   </div>
                   <div className="w-[90.71px] left-[-0px] top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -218,7 +224,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[2.54px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[2.54px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Order Delivered
                   </div>
                   <div className="w-[90.71px] left-0 top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -227,12 +233,15 @@ function OrderDetails() {
                 </div>
               </div>
             </div>
+            {/*  */}
             <div className="w-[486.64px] h-[71.06px] relative">
-              <div className="w-[402.87px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm" />
+              {/* line */}
+              <div className="w-[445px] h-[2.12px] left-[38.81px] top-[29.16px] absolute bg-[#d2d2d2] rounded-sm border" />
               <div className="w-[486.64px] h-[71.06px] pb-[13.86px] left-0 top-0 absolute border-b justify-start items-start gap-[41.27px] inline-flex">
-                <div className="relative">
+                <div className="w-[90.71px] relative">
+                  {/* dot */}
                   <div className="w-[13.55px] h-[13.55px] left-[38.79px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-bold font-['Raleway'] leading-[17.25px]">
+                  <div className="w-[90.71px] left-0 top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Time Ordered
                   </div>
                   <div className="w-[66.31px] left-[12.51px] top-[42.20px] absolute text-center text-[#667085] text-[11.09px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -241,7 +250,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[3.46px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[3.46px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Time Packaged
                   </div>
                   <div className="w-[90.71px] left-0 top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -250,7 +259,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[19.17px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[19.17px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Accepted
                   </div>
                   <div className="w-[90.71px] left-[-0px] top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
@@ -259,7 +268,7 @@ function OrderDetails() {
                 </div>
                 <div className="w-[90.71px] relative">
                   <div className="w-[13.55px] h-[13.55px] left-[35.94px] top-[23.10px] absolute bg-[#28f200] rounded-md" />
-                  <div className="left-[2.54px] top-[-0px] absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
+                  <div className="left-[2.54px] top-0 absolute text-center text-black text-[11.09px] font-semibold font-['Raleway'] leading-[17.25px]">
                     Order Delivered
                   </div>
                   <div className="w-[90.71px] left-0 top-[42.20px] absolute text-center text-[#667085] text-[9.86px] font-medium font-['Raleway'] leading-[14.78px]">
