@@ -14,9 +14,9 @@ function NewProduct() {
         <div className="grow shrink basis-0 text-neutral-950 text-[28px] font-medium font-['Raleway'] leading-9">
           New Product
         </div>
-        <div className="close-button cursor-pointer">
+        {/* <div className="close-button cursor-pointer">
           <Dialog2CloseSvg />
-        </div>
+        </div> */}
       </div>
       {/*  */}
       <div className="form-container flex flex-col gap-[24px]">

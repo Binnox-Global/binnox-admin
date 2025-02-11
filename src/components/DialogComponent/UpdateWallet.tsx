@@ -6,9 +6,9 @@ function UpdateWallet() {
     <div className="flex flex-col gap-[40px] bg-white w-[862px] h-[452px] p-[47px_30px] rounded-[30px]">
       <div className="header flex justify-between font-['Raleway'] text-[20px] leading-[13px] font-[700] text-black ">
         Update Wallet
-        <div className="close-button cursor-pointer">
+        {/* <div className="close-button cursor-pointer">
           <DialogCloseSvg height={35} width={34} />
-        </div>
+        </div> */}
       </div>
 
       <div className="form-container flex flex-col gap-[24px]">
