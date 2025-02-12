@@ -2,7 +2,8 @@ import React from "react";
 
 function OrderDetails() {
   return (
-    <div className="w-[897px] h-[1199px] flex bg-[#f2f2f2] bg-[#7e 7e7e3e] border border-red-500 overflow-hidden rounded-[30px] shadow-[0px_4px_15px_0px_rgba(0,0,0,0.14)] shadow-[0px_-4px_155px_0px_rgba(0,0,0,0.15)] shadow-[0px_4px_4px_0px_rgba(250,250,250,1.00)] shadow-[0px_-4px_4px_0px_rgba(244,244,244,1.00)]">
+    // <div className="w-[897px] h-[1199px] flex bg-[#f2f2f2] overflow-hidden rounded-[30px] shadow-[0px_4px_15px_0px_rgba(0,0,0,0.14)] shadow-[0px_-4px_155px_0px_rgba(0,0,0,0.15)] shadow-[0px_4px_4px_0px_rgba(250,250,250,1.00)] shadow-[0px_-4px_4px_0px_rgba(244,244,244,1.00)]">
+    <div className="w-[897px] h-[1199px] flex bg-[#f2f2f2] overflow-hidden rounded-[30px] shadow-[0px_-4px_4px_0px_rgba(244,244,244,1.00)]">
       <div className="w-[315px] h-[1199px] bg-[#e9e9e9] rounded-tl-[30px] rounded-bl-[30px] px-[30px] py-[30px] flex flex-col gap-[30px]">
         {/* user profile */}
         <ProfileDetails

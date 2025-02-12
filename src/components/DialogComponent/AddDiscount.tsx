@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import { Dialog2CloseSvg, DialogCloseSvg } from "../icons/DialogCloseSvg";
 import { NewProductImageFileSvg } from "../icons/NewProductImageFileSvg";
 import { AddIconSvg } from "../icons/AddIconSvg";
+import { useDialog } from "@/contexts/DialogContext";
 
 function AddDiscount() {
   const [requirePack, setRequirePack] = useState(false);
   const [requireExtra, setRequireExtra] = useState(false);
+  const { isOpen, toggleDialog } = useDialog();
 
   return (
     <div className="w-[639px] max-h-[1049px] inline-flex gap-[21px] flex-col relative bg-white rounded-lg p-[30px]">
@@ -14,9 +16,12 @@ function AddDiscount() {
         <div className="grow shrink basis-0 text-neutral-950 text-[28px] font-medium font-['Raleway'] leading-9">
           Add Discount
         </div>
-        {/* <div className="close-button cursor-pointer">
+        <div
+          className="close-button cursor-pointer"
+          onClick={() => toggleDialog("open")}
+        >
           <Dialog2CloseSvg />
-        </div> */}
+        </div>
       </div>
       {/*  */}
       <div className="form-container flex flex-col gap-[24px]">
@@ -135,7 +140,10 @@ function AddDiscount() {
         <button className="w-[125.48px] h-[41.91px] bg-[#F45309] rounded-lg justify-center items-center gap-[4.97px] inline-flex text-white text-sm font-medium font-['Raleway'] leading-[21px]">
           Activate
         </button>
-        <button className="h-[41.91px] w-[97px] bg-[#d3d3d9] rounded-lg justify-center items-center gap-[4.97px] inline-flex text-[#212143] text-sm font-medium font-['Raleway'] leading-[21px]">
+        <button
+          className="h-[41.91px] w-[97px] bg-[#d3d3d9] rounded-lg justify-center items-center gap-[4.97px] inline-flex text-[#212143] text-sm font-medium font-['Raleway'] leading-[21px]"
+          onClick={() => toggleDialog("open")}
+        >
           Cancel
         </button>
       </div>

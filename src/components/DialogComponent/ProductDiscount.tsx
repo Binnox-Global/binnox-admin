@@ -3,11 +3,13 @@ import React, { useState } from "react";
 import { Dialog2CloseSvg, DialogCloseSvg } from "../icons/DialogCloseSvg";
 import { NewProductImageFileSvg } from "../icons/NewProductImageFileSvg";
 import { AddIconSvg } from "../icons/AddIconSvg";
+import { useDialog } from "@/contexts/DialogContext";
 
 function ProductDiscount() {
   const [requirePack, setRequirePack] = useState(false);
   const [requireExtra, setRequireExtra] = useState(false);
   const [discountType, setDiscountType] = useState<string | null>(null);
+  const { toggleDialog } = useDialog();
 
   return (
     <div className="w-[639px] max-h-[1049px] inline-flex gap-[21px] flex-col relative bg-white rounded-lg p-[30px]">
@@ -15,9 +17,12 @@ function ProductDiscount() {
         <div className="grow shrink basis-0 text-neutral-950 text-[28px] font-medium font-['Raleway'] leading-9">
           Product Discount
         </div>
-        {/* <div className="close-button cursor-pointer">
+        <div
+          className="close-button cursor-pointer"
+          onClick={() => toggleDialog("open")}
+        >
           <Dialog2CloseSvg />
-        </div> */}
+        </div>
       </div>
       {/*  */}
       <div className="form-container flex flex-col gap-[24px]">
