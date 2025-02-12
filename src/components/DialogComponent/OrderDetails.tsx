@@ -1,4 +1,9 @@
 import React from "react";
+import { LocationSvg } from "../icons/LocationSvg";
+import { InvoiceSvg } from "../icons/InvoiceSvg";
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar";
+import { VisaCardSvg } from "../icons/VisaCardSvg";
+import { ChevronDownSvg } from "../icons/ChevronDownSvg";
 
 function OrderDetails() {
   return (
@@ -40,10 +45,11 @@ function OrderDetails() {
               Visa **56
             </div>
             <div className="w-[34px] h-6 relative bg-white rounded border border-[#f2f3f6]">
-              <img
+              {/* <img
                 className="w-[23.80px] h-[7.82px] left-[4.80px] top-[8.10px] absolute"
                 src="https://via.placeholder.com/24x8"
-              />
+              /> */}
+              <VisaCardSvg />
             </div>
           </div>
         </div>
@@ -54,7 +60,9 @@ function OrderDetails() {
             <div className="text-black text-base font-bold font-['Raleway'] leading-none">
               Map Overview
             </div>
-            <div className="icon">icon</div>
+            <div className="icon">
+              <ChevronDownSvg className="fill-black" />
+            </div>
           </div>
           <img
             className="w-[260px] h-[65px] rounded-[10px]"
@@ -72,7 +80,9 @@ function OrderDetails() {
             <div className="text-[#00c713] text-2xl font-semibold font-['Raleway'] leading-9">
               Completed
             </div>
-            <div className="icon">icon</div>
+            <div className="icon">
+              <ChevronDownSvg className="fill-[#00c713]" />
+            </div>
           </div>
         </div>
         <div className="w-[264px] h-[0px] border border-black/10"></div>
@@ -127,10 +137,14 @@ function OrderDetails() {
               <div className="text-white text-sm font-bold font-['Raleway'] leading-tight">
                 Track order
               </div>
-              <div className="text-white w-[17px] h-[17px] relative">i</div>
+              <div className="text-white w-[17px] h-[17px] relative">
+                <LocationSvg />
+              </div>
             </div>
             <div className="px-4 py-2.5 rounded-lg border border-[#d0d5dd] justify-start items-center gap-2 flex">
-              <div className="w-[17px] h-[17px] relative">i</div>
+              <div className="w-[17px] h-[17px] relative">
+                <InvoiceSvg />
+              </div>
               <div className="text-[#667085] text-sm font-bold font-['Raleway'] leading-tight">
                 Invoice
               </div>
@@ -390,12 +404,20 @@ interface ProfileDetailsProps {
 function ProfileDetails({ name, phone, email }: ProfileDetailsProps) {
   return (
     <div className="h-[103px] justify-start items-center gap-3 inline-flex">
-      <div className="w-[103px] h-[103px] bg-white rounded-[160.94px] border-8 border-white justify-center items-center flex overflow-hidden">
+      {/* <div className="w-[103px] h-[103px] bg-white rounded-[160.94px] border-8 border-white justify-center items-center flex overflow-hidden">
         <img
           className="w-[103px] h-[103px]"
           src="https://via.placeholder.com/103x103"
         />
-      </div>
+      </div> */}
+      <Avatar className="w-[103px] h-[103px] bg-white rounded-[160.94px] border-8 border-white justify-center items-center flex overflow-hidden">
+        <AvatarImage
+          className="w-[103px] h-[103px]"
+          src="https://github.com/shadcn.png"
+          alt="@shadcn"
+        />
+        <AvatarFallback>CN</AvatarFallback>
+      </Avatar>
       <div className="flex-col justify-center items-start gap -1.5 inline-flex">
         <div className="text-black text-base font-bold font-['Raleway'] leading-7 tracking-tight">
           {name}
