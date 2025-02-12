@@ -19,6 +19,16 @@ import AddDiscount from "@/components/DialogComponent/AddDiscount";
 import ProductDiscount from "@/components/DialogComponent/ProductDiscount";
 import NewPromo from "@/components/DialogComponent/NewPromo";
 import OrderDetails from "@/components/DialogComponent/OrderDetails";
+import { OrdersInProgressCard } from "@/components/cards/OrdersInProgressCard";
+import { BusinessInfoCard } from "@/components/cards/BusinessInfoCard";
+import { UserProfileCard } from "@/components/cards/UserProfileCard";
+import { OrderStatusCard } from "@/components/cards/OrderStatusCard";
+import { RidersInfoCard } from "@/components/cards/RidersInfoCard";
+import { ReferralCard } from "@/components/cards/ReferralCard";
+import { ExpandedStatsCard } from "@/components/cards/ExpandedStatsCard";
+import { DeliveryTruckSvg } from "@/components/icons/DeliveryTruckSvg";
+import { ProductsSvg } from "@/components/icons/ProductsSvg";
+import { ComplaintsSvg } from "@/components/icons/ComplaintsSvg";
 
 export default function Playground() {
   let popUp = [
@@ -39,6 +49,7 @@ export default function Playground() {
     <div className="rel ative p-8 space-y-8">
       <h1 className="text-2xl font-semibold mb-6">Component Playground</h1>
 
+      {/* Regular Stats Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         <StatsCard
           title="Total Revenue"
@@ -93,28 +104,82 @@ export default function Playground() {
             1: 50,
           }}
         />
+        {/* Expanded Stats Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <ExpandedStatsCard
+            icon={
+              <DeliveryTruckSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Delivery"
+            leftLabel="Processing"
+            leftValue={10}
+            rightLabel="Processed"
+            rightValue={4720}
+          />
+          <ExpandedStatsCard
+            icon={
+              <ProductsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Product"
+            leftLabel="Pending"
+            leftValue={102234}
+            rightLabel="Completed"
+            rightValue={28901}
+          />
+          <ExpandedStatsCard
+            icon={
+              <ComplaintsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Complaint"
+            leftLabel="Refund"
+            leftValue={15}
+            rightLabel="Report"
+            rightValue={36}
+          />
+          <ExpandedStatsCard
+            icon={<FileSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
+            title="Users"
+            leftLabel="Active"
+            leftValue={892}
+            rightLabel="Total"
+            rightValue={1278}
+          />
+        </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <VisitorsChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <UserOverviewChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <SalesOverviewChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <CustomerAcquisitionChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <ProfileGrowthChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <WeeklyRevenueChart />
-      </div>
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
-        <RecentOrders />
+      {/* Main Content - Two Column Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
+        {/* Left Column - Charts */}
+        <div className="space-y-8">
+          {/*<RevenueChart />
+          <VisitorsChart />
+          <UserOverviewChart />
+          <SalesOverviewChart />
+          <CustomerAcquisitionChart />
+          <ProfileGrowthChart />
+          <WeeklyRevenueChart />*/}
+          <RecentOrders />
+        </div>
+
+        {/* Right Column - Cards */}
+        <div className="space-y-8">
+          <ReviewCard
+            averageRating={4.0}
+            distribution={{
+              5: 50,
+              4: 50,
+              3: 50,
+              2: 50,
+              1: 50,
+            }}
+          />
+          <OrdersInProgressCard />
+          <BusinessInfoCard />
+          <UserProfileCard />
+          <OrderStatusCard />
+          <RidersInfoCard />
+          <ReferralCard />
+        </div>
       </div>
 
       <div className="flex">
