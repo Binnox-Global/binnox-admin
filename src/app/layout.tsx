@@ -18,6 +18,7 @@ const raleway = Raleway({
 });
 
 import { CurrencyProvider } from '@/contexts/CurrencyContext';
+import { DialogProvider } from "@/contexts/DialogContext";
 
 export default function RootLayout({
   children,
@@ -26,9 +27,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[#F1F1F1]">
+      <body className="relative bg-[#F1F1F1]">
         <CurrencyProvider>
-          {children}
+          <DialogProvider>{children}</DialogProvider>
         </CurrencyProvider>
       </body>
     </html>
