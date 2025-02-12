@@ -77,7 +77,7 @@ const SidebarComponent = ({
     {
       icon: <InventoryIconSvg />,
       name: "Inventory",
-      link: "/dashboard/settings",
+      link: "/dashboard/Inventory",
     },
     {
       icon: <AnalyticsIconSvg />,
