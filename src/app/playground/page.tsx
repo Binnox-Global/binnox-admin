@@ -108,13 +108,13 @@ export default function Playground() {
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
         {/* Left Column - Charts */}
         <div className="space-y-8">
-          <RevenueChart />
+          {/*<RevenueChart />
           <VisitorsChart />
           <UserOverviewChart />
           <SalesOverviewChart />
           <CustomerAcquisitionChart />
           <ProfileGrowthChart />
-          <WeeklyRevenueChart />
+          <WeeklyRevenueChart />*/}
           <RecentOrders />
         </div>
 
