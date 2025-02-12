@@ -9,7 +9,7 @@ import { CustomerAcquisitionChart } from "@/components/charts/CustomerAcquisitio
 import { ProfileGrowthChart } from "@/components/charts/ProfileGrowthChart";
 import { WeeklyRevenueChart } from "@/components/charts/WeeklyRevenueChart";
 import { RecentOrders } from "@/components/tables/RecentOrders";
-import { DialogComponent } from "@/components/DialogComponent";
+// import { DialogComponent } from "@/components/DialogComponent";
 import WithdrawalDetails from "@/components/DialogComponent/WithdrawalDetails";
 import UpdateWallet from "@/components/DialogComponent/UpdateWallet";
 import UpdatePrice from "@/components/DialogComponent/UpdatePrice";
@@ -21,8 +21,22 @@ import NewPromo from "@/components/DialogComponent/NewPromo";
 import OrderDetails from "@/components/DialogComponent/OrderDetails";
 
 export default function Playground() {
+  let popUp = [
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+  ];
   return (
-    <div className="p-8 space-y-8">
+    <div className="rel ative p-8 space-y-8">
       <h1 className="text-2xl font-semibold mb-6">Component Playground</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
@@ -104,12 +118,15 @@ export default function Playground() {
       </div>
 
       <div className="flex">
-        <DialogComponent
+        {/* {popUp.map((popUp) => ( */}
+        {/* <DialogComponent
           title="Dialog Title"
           trigger={<button>Open Dialog</button>}
         >
-          <p>Dialog content goes here.</p>
-        </DialogComponent>
+          <OrderDetails />
+          {/* <WithdrawalDetails /> * /}
+        </DialogComponent> */}
+        {/* // ))} */}
       </div>
       <div className="flex">
         <WithdrawalDetails />
