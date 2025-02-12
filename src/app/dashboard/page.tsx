@@ -12,11 +12,26 @@ import { RecentOrders } from "@/components/tables/RecentOrders";
 import { useState } from "react";
 import Image from "next/image";
 import { ProgressBarComponent } from "@/components/ProgressBarComponent/ProgressBar";
+import { AddIconSvg } from "@/components/icons/AddIconSvg";
 
 export default function DashboardPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="flex flex-col gap-[50px] text-black">
+      <div className="h-[45.27px] items-center justify-between inline-flex">
+        <div className="justify-start items-center gap-5 flex">
+          <div className="text-black text-xs font-bold font-['Raleway'] leading-[13.05px] tracking-tight">
+            10 Admin/ 4 Active
+          </div>
+          <button className="p-[12.79px] bg-black rounded-[7.11px] justify-center items-center gap-[7.11px] flex overflow-hidden text-white text-xs font-bold font-['Raleway'] leading-[13.05px] tracking-tight">
+            <AddIconSvg className="fill-white" />
+            Create New User
+          </button>
+        </div>
+        <div className="px-5 py-[15px] bg-[#f46702] rounded-[7px] justify-center items-center gap-2.5 flex text-right text-white text-xs font-bold font-['Raleway'] leading-[13.05px] tracking-tight">
+          Submit Today Record
+        </div>
+      </div>
       {/* Regular Stats Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         <StatsCard
