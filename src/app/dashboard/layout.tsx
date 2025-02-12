@@ -13,8 +13,10 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   const [isFull, setIsFull] = useState(true);
   return (
     <div className="relative flex min-h-full">
-      {/* Header */}
-      <HeaderComponent />
+      <div className="w-full fixed top-0 z-[10]">
+        {/* Header */}
+        <HeaderComponent />
+      </div>
       {/* Sidebar */}
       <div
         className={`fixed top-0 z-[10] h-screen overflow-hidden overflow-y-scroll bg-[#000000] ${

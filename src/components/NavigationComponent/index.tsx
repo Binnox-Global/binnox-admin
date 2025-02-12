@@ -185,7 +185,7 @@ const SidebarComponent = ({
 
 const HeaderComponent = () => {
   return (
-    <header className="fixed top-0 z-[0] w-full bg-[#000000] text-white shadow h-[90px] flex items-center justify-between px-5">
+    <header className=" w-full bg-[#000000] text-white shadow h-[90px] flex items-center justify-between px-5">
       <div className="right-container ms-auto me-[10px] flex items-center gap-[23px]">
         <div className="icon">
           <NotificationButton />
