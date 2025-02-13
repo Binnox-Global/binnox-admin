@@ -29,6 +29,12 @@ import { ExpandedStatsCard } from "@/components/cards/ExpandedStatsCard";
 import { DeliveryTruckSvg } from "@/components/icons/DeliveryTruckSvg";
 import { ProductsSvg } from "@/components/icons/ProductsSvg";
 import { ComplaintsSvg } from "@/components/icons/ComplaintsSvg";
+import { BusinessList } from "@/components/tables/BusinessList";
+import { UserList } from "@/components/tables/UserList";
+import { RiderList } from "@/components/tables/RiderList";
+import { ChampionList } from "@/components/tables/ChampionList";
+import { OrderList } from "@/components/tables/OrderList";
+import { InventoryList } from "@/components/tables/InventoryList";
 
 export default function Playground() {
   let popUp = [
@@ -159,6 +165,14 @@ export default function Playground() {
           <ProfileGrowthChart />
           <WeeklyRevenueChart />
           <RecentOrders />
+          <div className="w-full">
+            <InventoryList />
+            <OrderList />
+            <ChampionList />
+            <RiderList />
+            <UserList />
+            <BusinessList />
+          </div>
         </div>
 
         {/* Right Column - Cards */}
