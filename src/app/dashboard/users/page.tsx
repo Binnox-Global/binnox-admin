@@ -65,7 +65,7 @@ export default function UsersPage() {
         {/* Right Column - Cards */}
         <div className="space-y-8">
           {/* state circle progress bar */}
-          <div className="w-[350px] h-[315px] p-[22px] relative bg-white rounded-[20px] backdrop-blur-[120px]  overflow-hidden inline-flex flex-col gap-[25px]">
+          <div className="min-w-[350px] w-full h-[315px] p-[22px] relative bg-white rounded-[20px] backdrop-blur-[120px]  overflow-hidden inline-flex flex-col gap-[25px]">
             <div className="">
               <div className="text-black text-lg font-bold font-['Raleway'] leading-relaxed">
                 User Satisfaction Rate
