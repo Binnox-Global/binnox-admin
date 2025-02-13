@@ -32,7 +32,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
         } flex flex-col flex-1 min-h-[100vh] relative `}
       >
         {/* Page Content */}
-        <main className=" p-6 bg-gray-100 relative mt-[90px]  min-h-[100%]">
+        <main className=" p-[50px] bg-gray-100 relative mt-[90px]  min-h-[100%]">
           {children}
         </main>
       </div>
