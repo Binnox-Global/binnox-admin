@@ -35,6 +35,16 @@ import { RiderList } from "@/components/tables/RiderList";
 import { ChampionList } from "@/components/tables/ChampionList";
 import { OrderList } from "@/components/tables/OrderList";
 import { InventoryList } from "@/components/tables/InventoryList";
+import { UsersAnalytics } from "@/components/tables/UsersAnalytics";
+import { BusinessAnalytics } from "@/components/tables/BusinessAnalytics";
+import { RidersAnalytics } from "@/components/tables/RidersAnalytics";
+import { OrdersAnalytics } from "@/components/tables/OrdersAnalytics";
+import { ReturnOrdersAndComplaints } from "@/components/tables/ReturnOrdersAndComplaints";
+import { WithdrawalHistory } from "@/components/tables/WithdrawalHistory";
+import { RecentDelivery } from "@/components/tables/RecentDelivery";
+import { ComplaintHistory } from "@/components/tables/ComplaintHistory";
+import { InventoryOverviewList } from "@/components/tables/InventoryOverviewList";
+import { RecentRevenues } from "@/components/tables/RecentRevenues";
 
 export default function Playground() {
   let popUp = [
@@ -173,6 +183,11 @@ export default function Playground() {
             <UserList />
             <BusinessList />
           </div>
+          <WithdrawalHistory />
+          <RecentDelivery />
+          <ComplaintHistory />
+          <InventoryOverviewList />
+          <RecentRevenues />
         </div>
 
         {/* Right Column - Cards */}
@@ -187,12 +202,12 @@ export default function Playground() {
               1: 50,
             }}
           />
-          <OrdersInProgressCard />
+          {/*} <OrdersInProgressCard />
           <BusinessInfoCard />
           <UserProfileCard />
           <OrderStatusCard />
           <RidersInfoCard />
-          <ReferralCard />
+          <ReferralCard />*/}
         </div>
       </div>
 
@@ -233,6 +248,19 @@ export default function Playground() {
       </div>
       <div className="flex">
         <OrderDetails />
+      </div>
+      <div className="w-full">
+        <ReturnOrdersAndComplaints />
+        <OrdersAnalytics />
+        <RidersAnalytics />
+        <BusinessAnalytics />
+        <UsersAnalytics />
+        <InventoryList />
+        <OrderList />
+        <ChampionList />
+        <RiderList />
+        <UserList />
+        <BusinessList />
       </div>
     </div>
   );
