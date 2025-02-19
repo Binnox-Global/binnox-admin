@@ -1,14 +1,22 @@
-"use client";
-import CircleProgressBarCard from "@/components/cards/CircleProgressBarCard";
 import { StatsCard } from "@/components/cards/StatsCard";
-import { VisitorsChart } from "@/components/charts/VisitorsChart";
+import WalletActivityCard from "@/components/cards/WalletActivityCard";
 import { FileSvg } from "@/components/icons/FileSvg";
-import { UserList } from "@/components/tables/UserList";
+import { WithdrawalHistory } from "@/components/tables/WithdrawalHistory";
+import React from "react";
 
-const percentage = 85;
-export default function UsersPage() {
+function page() {
   return (
     <div className="flex flex-col gap-[50px] text-black">
+      <div className="h-[45.27px] items-center justify-between inline-flex">
+        <div className="justify-start items-center gap-5 flex">
+          <div className="text-black text-[40px] font-bold font-['Raleway'] leading-[13.05px] tracking-tight">
+            Dominos Pizza Wallet
+          </div>
+        </div>
+        <div className="px-5 py-[15px] bg-[#000] rounded-[7px] justify-center items-center gap-2.5 flex text-right text-white text-xs font-bold font-['Raleway'] leading-[13.05px] tracking-tight">
+          Update wallet
+        </div>
+      </div>
       {/* Regular Stats Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         <StatsCard
@@ -56,18 +64,16 @@ export default function UsersPage() {
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
         {/* Left Column - Charts */}
         <div className="space-y-8">
-          <VisitorsChart />
+          <WalletActivityCard />
+
+          <WithdrawalHistory />
         </div>
 
         {/* Right Column - Cards */}
-        <div className="space-y-8">
-          <CircleProgressBarCard percentage={percentage} />
-        </div>
-      </div>
-
-      <div className="">
-        <UserList />
+        <div className="space-y-8"></div>
       </div>
     </div>
   );
 }
+
+export default page;
