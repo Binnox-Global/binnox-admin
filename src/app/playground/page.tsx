@@ -175,6 +175,11 @@ export default function Playground() {
           <ProfileGrowthChart />
           <WeeklyRevenueChart />
           <RecentOrders />
+          <WithdrawalHistory />
+          <RecentDelivery />
+          <ComplaintHistory />
+          <InventoryOverviewList />
+          <RecentRevenues />
           <div className="w-full">
             <InventoryList />
             <OrderList />
@@ -183,11 +188,14 @@ export default function Playground() {
             <UserList />
             <BusinessList />
           </div>
-          <WithdrawalHistory />
-          <RecentDelivery />
-          <ComplaintHistory />
-          <InventoryOverviewList />
-          <RecentRevenues />
+          <div className="w-full">
+            <ReturnOrdersAndComplaints />
+            <OrdersAnalytics />
+            <RidersAnalytics />
+            <BusinessAnalytics />
+            <UsersAnalytics />
+          </div>
+          <div className="inline-flex flex-col gap-10"> </div>
         </div>
 
         {/* Right Column - Cards */}
@@ -202,12 +210,12 @@ export default function Playground() {
               1: 50,
             }}
           />
-          {/*} <OrdersInProgressCard />
+          <OrdersInProgressCard />
           <BusinessInfoCard />
           <UserProfileCard />
           <OrderStatusCard />
           <RidersInfoCard />
-          <ReferralCard />*/}
+          <ReferralCard />{" "}
         </div>
       </div>
 
@@ -248,19 +256,6 @@ export default function Playground() {
       </div>
       <div className="flex">
         <OrderDetails />
-      </div>
-      <div className="w-full">
-        <ReturnOrdersAndComplaints />
-        <OrdersAnalytics />
-        <RidersAnalytics />
-        <BusinessAnalytics />
-        <UsersAnalytics />
-        <InventoryList />
-        <OrderList />
-        <ChampionList />
-        <RiderList />
-        <UserList />
-        <BusinessList />
       </div>
     </div>
   );
