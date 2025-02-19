@@ -9,6 +9,16 @@ import { CustomerAcquisitionChart } from "@/components/charts/CustomerAcquisitio
 import { ProfileGrowthChart } from "@/components/charts/ProfileGrowthChart";
 import { WeeklyRevenueChart } from "@/components/charts/WeeklyRevenueChart";
 import { RecentOrders } from "@/components/tables/RecentOrders";
+// import { DialogComponent } from "@/components/DialogComponent";
+import WithdrawalDetails from "@/components/DialogComponent/WithdrawalDetails";
+import UpdateWallet from "@/components/DialogComponent/UpdateWallet";
+import UpdatePrice from "@/components/DialogComponent/UpdatePrice";
+import NewProduct from "@/components/DialogComponent/NewProduct";
+import UploadCombo from "@/components/DialogComponent/UploadCombo";
+import AddDiscount from "@/components/DialogComponent/AddDiscount";
+import ProductDiscount from "@/components/DialogComponent/ProductDiscount";
+import NewPromo from "@/components/DialogComponent/NewPromo";
+import OrderDetails from "@/components/DialogComponent/OrderDetails";
 import { OrdersInProgressCard } from "@/components/cards/OrdersInProgressCard";
 import { BusinessInfoCard } from "@/components/cards/BusinessInfoCard";
 import { UserProfileCard } from "@/components/cards/UserProfileCard";
@@ -37,10 +47,24 @@ import { InventoryOverviewList } from "@/components/tables/InventoryOverviewList
 import { RecentRevenues } from "@/components/tables/RecentRevenues";
 
 export default function Playground() {
+  let popUp = [
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+    {
+      name: "Withdrawal",
+      dialog: <WithdrawalDetails />,
+    },
+  ];
   return (
-    <div className="p-8 space-y-8">
+    <div className="rel ative p-8 space-y-8">
       <h1 className="text-2xl font-semibold mb-6">Component Playground</h1>
-      
+
       {/* Regular Stats Cards Row */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
         <StatsCard
@@ -50,7 +74,7 @@ export default function Playground() {
           timeFrame="₦45,000 today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Total Orders"
           value="902"
@@ -58,7 +82,7 @@ export default function Playground() {
           timeFrame="today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Customers"
           value="1278"
@@ -66,7 +90,7 @@ export default function Playground() {
           timeFrame="today"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-        
+
         <StatsCard
           title="Businesses Online"
           value="28"
@@ -84,59 +108,81 @@ export default function Playground() {
         />
       </div>
 
-      {/* Expanded Stats Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
-        <ExpandedStatsCard 
-          icon={<DeliveryTruckSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
-          title="Delivery"
-          leftLabel="Processing"
-          leftValue={10}
-          rightLabel="Processed"
-          rightValue={4720}
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-4">
+        <RevenueChart />
+        <ReviewCard
+          averageRating={4.0}
+          distribution={{
+            5: 50,
+            4: 50,
+            3: 50,
+            2: 50,
+            1: 50,
+          }}
         />
-        <ExpandedStatsCard 
-          icon={<ProductsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
-          title="Product"
-          leftLabel="Pending"
-          leftValue={102234}
-          rightLabel="Completed"
-          rightValue={28901}
-        />
-        <ExpandedStatsCard 
-          icon={<ComplaintsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
-          title="Complaint"
-          leftLabel="Refund"
-          leftValue={15}
-          rightLabel="Report"
-          rightValue={36}
-        />
-        <ExpandedStatsCard 
-          icon={<FileSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
-          title="Users"
-          leftLabel="Active"
-          leftValue={892}
-          rightLabel="Total"
-          rightValue={1278}
-        />
+        {/* Expanded Stats Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
+          <ExpandedStatsCard
+            icon={
+              <DeliveryTruckSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Delivery"
+            leftLabel="Processing"
+            leftValue={10}
+            rightLabel="Processed"
+            rightValue={4720}
+          />
+          <ExpandedStatsCard
+            icon={
+              <ProductsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Product"
+            leftLabel="Pending"
+            leftValue={102234}
+            rightLabel="Completed"
+            rightValue={28901}
+          />
+          <ExpandedStatsCard
+            icon={
+              <ComplaintsSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />
+            }
+            title="Complaint"
+            leftLabel="Refund"
+            leftValue={15}
+            rightLabel="Report"
+            rightValue={36}
+          />
+          <ExpandedStatsCard
+            icon={<FileSvg className="w-6 h-6 lg:w-8 lg:h-8 text-[#F46702]" />}
+            title="Users"
+            leftLabel="Active"
+            leftValue={892}
+            rightLabel="Total"
+            rightValue={1278}
+          />
+        </div>
       </div>
 
       {/* Main Content - Two Column Layout */}
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
         {/* Left Column - Charts */}
         <div className="space-y-8">
-          {/*<RevenueChart />
+          <RevenueChart />
           <VisitorsChart />
           <UserOverviewChart />
           <SalesOverviewChart />
           <CustomerAcquisitionChart />
           <ProfileGrowthChart />
-          <WeeklyRevenueChart />*/}
+          <WeeklyRevenueChart />
           <RecentOrders />
-          <WithdrawalHistory />
-          <RecentDelivery />
-          <ComplaintHistory />
-          <InventoryOverviewList />
-          <RecentRevenues />
+          <div className="w-full">
+            <InventoryList />
+            <OrderList />
+            <ChampionList />
+            <RiderList />
+            <UserList />
+            <BusinessList />
+          </div>
         </div>
 
         {/* Right Column - Cards */}
@@ -148,7 +194,7 @@ export default function Playground() {
               4: 50,
               3: 50,
               2: 50,
-              1: 50
+              1: 50,
             }}
           />
          {/*} <OrdersInProgressCard />
@@ -160,18 +206,43 @@ export default function Playground() {
         </div>
       </div>
 
-      <div className="w-full">
-        <ReturnOrdersAndComplaints />
-        <OrdersAnalytics />
-        <RidersAnalytics />
-        <BusinessAnalytics />
-        <UsersAnalytics />
-        <InventoryList />
-        <OrderList />
-        <ChampionList />
-        <RiderList />
-        <UserList />
-        <BusinessList />
+      <div className="flex">
+        {/* {popUp.map((popUp) => ( */}
+        {/* <DialogComponent
+          title="Dialog Title"
+          trigger={<button>Open Dialog</button>}
+        >
+          <OrderDetails />
+          {/* <WithdrawalDetails /> * /}
+        </DialogComponent> */}
+        {/* // ))} */}
+      </div>
+      <div className="flex">
+        <WithdrawalDetails />
+      </div>
+      <div className="flex">
+        <UpdateWallet />
+      </div>
+      <div className="flex">
+        <UpdatePrice />
+      </div>
+      <div className="flex">
+        <NewProduct />
+      </div>
+      <div className="flex">
+        <UploadCombo />
+      </div>
+      <div className="flex">
+        <AddDiscount />
+      </div>
+      <div className="flex">
+        <ProductDiscount />
+      </div>
+      <div className="flex">
+        <NewPromo />
+      </div>
+      <div className="flex">
+        <OrderDetails />
       </div>
     </div>
   );

@@ -1,0 +1,33 @@
+.DialogComponent{
+  border: solid 10px red;
+  .Dialog-background{
+  
+    position: fixed;
+    // position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
+    min-height: 100vh !important;
+    z-index: 8;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 11 0px;
+    // padding-bottom: 50px;
+    border: solid 1px green;
+
+  }
+
+  .DialogContent{
+    background-color: white !important;
+    // border-radius: 10px;
+    // padding: 20px;
+    // width: 80%;
+    // max-width: 500px;
+    // box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    // z-index: 9;
+  }
+}
