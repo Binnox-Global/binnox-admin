@@ -9,12 +9,12 @@ function WithdrawalDetails() {
     <div className="flex flex-col gap-[40px] bg-white w-[862px] h-[510px] p-[47px_30px] rounded-[30px]">
       <div className="header flex justify-between font-['Raleway'] text-[20px] leading-[13px] font-[700] text-black ">
         Withdrawal Details
-        <div
+        {/* <div
           className="close-button cursor-pointer"
           onClick={() => toggleDialog("open")}
         >
           <DialogCloseSvg height={35} width={34} />
-        </div>
+        </div> */}
       </div>
 
       <div className="form-container flex flex-col gap-[24px]">
