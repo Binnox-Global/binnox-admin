@@ -7,6 +7,7 @@ import { StatsCard } from "@/components/cards/StatsCard";
 import { FileSvg } from "@/components/icons/FileSvg";
 import { RecentOrders } from "@/components/tables/RecentOrders";
 import { WithdrawalHistory } from "@/components/tables/WithdrawalHistory";
+import Link from "next/link";
 import { useParams } from "next/navigation";
 
 export default function BusinessDetailsPage() {
@@ -22,6 +23,12 @@ export default function BusinessDetailsPage() {
           </div>
         </div>
         <div className="h-[33.75px] justify-end items-center gap-[23px] inline-flex">
+          <Link
+            href={`./${businessId}/wallet`}
+            className="px-5 py-[15px] bg-[#000] rounded-[7px] justify-center items-center gap-2.5 flex text-right text-white text-xs font-bold font-['Raleway'] leading-[13.05px] tracking-tight"
+          >
+            wallet
+          </Link>
           <div className="p-[10.87px] bg-[#00c713] rounded-md justify-center items-center gap-2 flex overflow-hidden">
             <div className="text-white text-[10.20px] font-bold font-['Raleway'] leading-[11.10px] tracking-tight">
               Active
