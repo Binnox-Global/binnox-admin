@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { TableFilterSvg } from "@/components/icons/TableFilterSvg";
 import { TableSearchSvg } from "@/components/icons/TableSearchSvg";
 import { CaretUpSvg } from "@/components/icons/CaretUpSvg";
+import { useRouter } from "next/navigation";
 
 interface User {
   id: string;
@@ -29,6 +30,7 @@ const defaultUsers: User[] = [
 ];
 
 export const UserList = () => {
+  const router = useRouter(); // Get the router object
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -202,7 +204,9 @@ export const UserList = () => {
         </thead>
         <tbody>
           {paginatedUsers.map((user) => (
-            <tr key={user.id} className="bg-white border-b border-[#EAECF0]">
+            <tr key={user.id} className="bg-white border-b border-[#EAECF0] cursor-pointer hover:bg-[#F7F7F7]"
+              onClick={() => router.push(`./users/${user.id}`)}
+            >
               <td className="py-4 px-6">
                 <span className="font-raleway text-[14px] font-semibold leading-[18.37px] tracking-[0.005em] text-[#1D1F2C]">
                   {user.name}
