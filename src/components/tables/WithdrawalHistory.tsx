@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { TableSearchSvg } from "@/components/icons/TableSearchSvg";
 import { TableFilterSvg } from "@/components/icons/TableFilterSvg";
 import { CaretUpSvg } from "@/components/icons/CaretUpSvg";
+import { useParams, useRouter } from "next/navigation";
 
 interface Withdrawal {
   id: string;
@@ -25,6 +26,9 @@ const defaultWithdrawals: Withdrawal[] = [
 ];
 
 export const WithdrawalHistory = () => {
+  const router = useRouter();
+  const params = useParams(); // Get dynamic route params
+  const profileId = params.id; // Extract the 'id' from the route
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -211,7 +215,15 @@ export const WithdrawalHistory = () => {
           </thead>
           <tbody>
             {paginatedWithdrawals.map((withdrawal) => (
-              <tr key={withdrawal.id} className="border-b border-[#EAECF0] bg-white">
+              <tr key={withdrawal.id} className="border-b border-[#EAECF0] bg-white cursor-pointer hover:bg-[#F7F7F7]"
+                onClick={() => {
+                  // NOTE: because this is rendered in multiple routes, we need to check the current route then navigate accordingly
+                  if (window.location.pathname.includes("wallet")) {
+                    router.push(`./wallet/${withdrawal.id}`);
+                  } else {
+                    router.push(`./${profileId}/wallet/${withdrawal.id}`);
+                  }
+                }}>
                 <td className="py-4 px-6">
                   <span className="font-raleway text-[12px] font-semibold leading-[16px] text-black">
                     {withdrawal.date}

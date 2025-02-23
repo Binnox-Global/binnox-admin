@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import { TableFilterSvg } from "@/components/icons/TableFilterSvg";
 import { TableSearchSvg } from "@/components/icons/TableSearchSvg";
 import { CaretUpSvg } from "@/components/icons/CaretUpSvg";
+import { useParams, useRouter } from "next/navigation";
 
 interface Rider {
   id: string;
@@ -32,6 +33,7 @@ const defaultRiders: Rider[] = [
 ];
 
 export const RiderList = () => {
+  const router = useRouter(); // Get the router object
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [filterOpen, setFilterOpen] = useState(false);
@@ -212,7 +214,7 @@ export const RiderList = () => {
         </thead>
         <tbody>
           {paginatedRiders.map((rider) => (
-            <tr key={rider.id} className="bg-white border-b border-[#EAECF0]">
+            <tr key={rider.id} className="bg-white border-b border-[#EAECF0] cursor-pointer hover:bg-[f7f7f7]" onClick={() => router.push('./riders/' + rider.id)}>
               <td className="py-4 px-6">
                 <div className="flex items-center gap-3">
                   <img src="/avatar.png" alt={rider.name} className="w-8 h-8 rounded-full" />
