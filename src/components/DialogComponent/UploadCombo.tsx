@@ -131,12 +131,12 @@ function UploadCombo() {
         <div className="grow shrink basis-0 text-neutral-950 text-[28px] font-medium font-['Raleway'] leading-9">
           Upload Combo
         </div>
-        <div
+        {/* <div
           className="close-button cursor-pointer"
           onClick={() => toggleDialog("open")}
         >
           <Dialog2CloseSvg />
-        </div>
+        </div> */}
       </div>
       {/*  */}
       <div className="form-container flex flex-col gap-[24px]">
