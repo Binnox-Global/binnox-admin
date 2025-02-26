@@ -1,43 +1,58 @@
+"use client";
+
 import { StatsCard } from "@/components/cards/StatsCard";
+import { SendsTable } from "@/components/tables/SendsTable";
+import { RejectedSendsTable } from "@/components/tables/RejectedSendsTable";
+import { OrderRecordsIconSvg } from "@/components/icons";
 import { FileSvg } from "@/components/icons/FileSvg";
-import { OrderList } from "@/components/tables/OrderList";
-import React from "react";
 
-function OrderPage() {
+export default function SendsPage() {
   return (
-    <div className="flex flex-col gap-[50px] text-black">
-      {/* Regular Stats Cards Row */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-        <StatsCard
-          title="Total Revenue"
-          value="₦95,324"
-          percentage={16}
-          timeFrame="₦45,000 today"
-          icon={<FileSvg className="text-[#F46702]" size={24} />}
-        />
-
+    <div className="flex flex-col gap-[50px]">
+      {/* Stats Cards Row */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
         <StatsCard
           title="Total Orders"
-          value="902"
-          percentage={2}
-          timeFrame="today"
+          value="102"
+          percentage={8}
+          timeFrame="this week"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
-
         <StatsCard
-          title="Customers"
-          value="1278"
-          percentage={-5}
-          timeFrame="today"
+          title="Pending Orders"
+          value="6"
+          percentage={-2}
+          timeFrame="this week"
+          icon={<FileSvg className="text-[#F46702]" size={24} />}
+        />
+        <StatsCard
+          title="Ongoing Order"
+          value="4"
+          percentage={5}
+          timeFrame="this week"
+          icon={<FileSvg className="text-[#F46702]" size={24} />}
+        />
+        <StatsCard
+          title="Cancelled Order"
+          value="20"
+          percentage={-12}
+          timeFrame="this week"
+          icon={<FileSvg className="text-[#F46702]" size={24} />}
+        />
+        <StatsCard
+          title="Completed Orders"
+          value="65"
+          percentage={15}
+          timeFrame="this week"
           icon={<FileSvg className="text-[#F46702]" size={24} />}
         />
       </div>
 
-      <div className="">
-        <OrderList />
+      {/* Tables Section */}
+      <div className="space-y-8">
+        <RejectedSendsTable />
+        <SendsTable />
       </div>
     </div>
   );
 }
-
-export default OrderPage;

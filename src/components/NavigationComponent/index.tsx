@@ -80,6 +80,11 @@ const SidebarComponent = ({
       link: "/dashboard/sends",
     },
     {
+      icon: <OrderRecordsIconSvg />,
+      name: "Binnox Send",
+      link: "/dashboard/sends",
+    },
+    {
       icon: <InventoryIconSvg />,
       name: "Inventory",
       link: "/dashboard/Inventory",
@@ -87,7 +92,7 @@ const SidebarComponent = ({
     {
       icon: <AnalyticsIconSvg />,
       name: "Analytics",
-      link: "/dashboard/users",
+      link: "/dashboard/analytics",
     },
     {
       icon: <MarketingIconSvg />,
@@ -97,7 +102,7 @@ const SidebarComponent = ({
     {
       icon: <FinancialIconSvg />,
       name: "Financial",
-      link: "/dashboard/settings",
+      link: "/dashboard/financial",
     },
   ];
 
@@ -156,14 +161,17 @@ const SidebarComponent = ({
           isFull={isFull}
           icon={<NavSupportIconSvg />}
           title={"Support"}
-          links={[]}
+          links={[
+            { name: "Customer", link: "/dashboard/support/customer" },
+            { name: "Ticket", link: "/dashboard/support/ticket" }
+          ]}
         />
 
         <Link
-          href={"/dashboard/settings"}
+          href={"/dashboard/profile"}
           className={`flex gap-1 items-center p-2 h-[47px] rounded-[5px] hover:bg-[#141414] mb-2  ${
             !isFull && "justify-center"
-          } ${isActive("/dashboard/settings") ? "bg-[#141414]" : ""}`}
+          } ${isActive("/dashboard/profile") ? "bg-[#141414]" : ""}`}
         >
           <div className="icon-container w-10 bor der flex justify-center items-center">
             {/* {navLink.icon} */}
@@ -172,10 +180,10 @@ const SidebarComponent = ({
           {isFull && "Profile"}
         </Link>
         <Link
-          href={"/dashboard/settings"}
+          href={"/dashboard/profile"}
           className={`flex gap-1 items-center p-2 h-[47px] rounded-[5px] hover:bg-[#141414] mb-2  ${
             !isFull && "justify-center"
-          } ${isActive("/dashboard/settings") ? "bg-[#141414]" : ""}`}
+          } ${isActive("/dashboard/profile") ? "bg-[#141414]" : ""}`}
         >
           <div className="icon-container w-10 bor der flex justify-center items-center">
             {/* {navLink.icon} */}
