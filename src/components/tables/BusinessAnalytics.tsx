@@ -3,6 +3,7 @@
 import { useState, useMemo } from "react";
 import { TableSearchSvg } from "@/components/icons/TableSearchSvg";
 import { CaretUpSvg } from "@/components/icons/CaretUpSvg";
+import { useRouter } from 'next/navigation';
 
 interface Business {
   id: string;
@@ -42,6 +43,8 @@ export const BusinessAnalytics = () => {
   });
 
   const itemsPerPage = 10;
+
+  const router = useRouter();
 
   const handleSort = (key: keyof Business) => {
     setSortConfig({
@@ -160,7 +163,10 @@ export const BusinessAnalytics = () => {
                 </div>
               )}
             </div>
-            <button className="px-4 py-2 rounded-lg bg-[#FFF1E9] text-[#F46702]">
+            <button 
+              onClick={() => router.push('/dashboard/analytics/businesses')}
+              className="rounded-[8px] px-4 py-2 bg-[#F4670233] text-[#F46702] text-[15px] font-medium"
+            >
               See All
             </button>
           </div>
