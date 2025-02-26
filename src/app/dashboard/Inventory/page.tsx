@@ -1,6 +1,8 @@
 import { StatsCard } from "@/components/cards/StatsCard";
 import { CaretUpSvg } from "@/components/icons/CaretUpSvg";
 import { FileSvg } from "@/components/icons/FileSvg";
+import { InventoryList } from "@/components/tables/InventoryList";
+import { InventoryOverviewList } from "@/components/tables/InventoryOverviewList";
 import { RecentOrders } from "@/components/tables/RecentOrders";
 import React from "react";
 
@@ -46,7 +48,7 @@ function InventoryPage() {
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-8">
         {/* Left Column - Charts */}
         <div className="space-y-8">
-          <RecentOrders />
+          <InventoryOverviewList />
         </div>
 
         {/* Right Column - Cards */}
