@@ -64,7 +64,7 @@ const SidebarComponent = ({
         },
         {
           name: "Price Update",
-          link: "/dashboard/businesses",
+          link: "/dashboard/updatePrice",
         },
       ],
     },
@@ -74,11 +74,7 @@ const SidebarComponent = ({
       name: "Order Records",
       link: "/dashboard/orders",
     },
-    {
-      icon: <OrderRecordsIconSvg />,
-      name: "Binnox Send",
-      link: "/dashboard/sends",
-    },
+
     {
       icon: <OrderRecordsIconSvg />,
       name: "Binnox Send",
